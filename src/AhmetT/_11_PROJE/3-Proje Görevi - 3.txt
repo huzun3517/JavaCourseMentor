@@ -1,0 +1,22 @@
+Proje Görevi - 3
+
+Method-12 public static void dersGuncelleForm(TreeSet<String> dersler)
+Açýklama: Kullanicidan guncellenecekDers ders adini ve yeni adnini alip dersGuncelle() methoduna göndererek guncelleyen method
+
+Method-13 public static void listeDerslerArama(TreeSet<String> dersler)
+Açýklama: Kayit edilen derslerden arananKelime icerenlerin listesini ekrana yazdiran method
+
+Method-14 public static void listeleOgrenciForm(TreeMap<Integer, String> ogrenciler)
+Açýklama: Bu method ogrenciler TreeMap'ini alacak ve aranan kelime'nin numara olup olmadigini girdiSayimi() ile kotrol edip eger sayi ise ögrenciyi numarasi ile, eger sayi degilse aranan kelime isim de varsa isme göre arama bos girilmis ise tüm listeyi yazdiriniz. Bu islemler oveload methodlar ile yapilacaktir. Farkli degiskenli ayni isimli 3 method
+
+Method-15 public static void listeleOgrenci(TreeMap<Integer, String> ogrenciler)
+Açýklama: Kayit edilen tüm ögrencilerin listesini ekrana yazdiran method
+
+Method-16 public static void listeleOgrenci(TreeMap<Integer, String> ogrenciler, String arananKelime)
+Açýklama: (overload) Kayit edilen ögrencilerden adi soyadi icinde arananKelime icerenlerin listesini ekrana yazdiran method
+
+Method-17 public static void listeleOgrenci(TreeMap<Integer, String> ogrenciler, int arananNo)
+Açýklama: (overload) Kayit edilen ögrencilerden numarasina göre arama yapan yapan ve ekrana yazdiran method
+
+Method-18 public static int yeniOgrenciNosuAl(TreeMap<Integer, String> ogrenciler)
+Açýklama: yeni kayýt olacak öðrenci için verilen aralýkta ancak önceden verilmemiþ random sayý üreten method

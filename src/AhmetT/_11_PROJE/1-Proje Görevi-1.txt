@@ -1,0 +1,34 @@
+Proje Görevi-1:
+1. Ýlk önce projeKayitIslemleri adlý bir class oluþturun.
+2. Aþaðýdaki methodlarý oluþturup, mainden çaðýrarak doðru çalýþtýklarýný görünüz.
+
+main iþlemleri :
+    main de dersler adlý String türü bir TreeSet oluþturunuz.
+
+Method-1 public static String kelimeDuzenle(String str)
+Açýklamasý: gelen str degiskenini trim edip ilk harfini büyük diger harflerini kücük yapacak ve return edecek.
+Örnek: str: " meRhaBA   "  -->  return : "Merhaba"
+
+Method-2 public static String isimDuzenle(String str)
+Açýklamasý: gelen stryi .trim() edecek, .replaceAll("[ ]+", " "); ile kelimeler arasinda birden fazla bosluk varsa
+fazla boþluklarý bir bosluga dönüstürecek, .split(" "); ile String[] arraye atacak, cümlenin son kelimesinin tüm harfleri büyük
+öncekileri kelimeDuzenle() methodu'nu kullanarak düzenleyip, önde ve sonda bosluk olmadan return edecek.
+Örnek: str : "  hasaN aLi     demir   "  -->  return : "Hasan Ali DEMIR"
+
+Method-3 public static String isimDuzenleDers(String str)
+Açýklamasý: Method -2 ile benzer sadece tüm kelimeler kelimeDuzenle() methodu'nu kullanarak düzenlenecek.
+Örnek: str : "     türK    diLi   "  -->  return : "Türk Dili"
+
+Method-4 public static int numaraVer(int min, int max)
+Açýklamasý: aldigi min ve max deðerleri arasýnda random sayi üretip return edecek
+Örnek: numaraVer(10, 100);  -->  67
+
+Method-5 public static String kullanicidanVeriAl(String ekranYazisi)
+Açýklamasý: Scanner kullanarak kullanicidan bir kelime ya da cümle alacak.
+Örnek: nextLine(); kullanýnýz
+
+Method-6 public static void dersEkle(TreeSet<String> dersler, String eklenecekDers)
+Açýklamasý: gelen eklenecekDers degiskenini kullanarak main de oluþturulacak TreeSet'e ekleyen method
+
+Method-7 public static void listeDersler(TreeSet<String> dersler)
+Açýklamasý: gelen TreeSet'deki tüm verileri ekrana yazdýran method

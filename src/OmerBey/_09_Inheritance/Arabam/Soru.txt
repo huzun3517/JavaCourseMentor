@@ -1,0 +1,29 @@
+
+tasitlar     isminde bir class oluþturun. Bu bizim super classýmýz olsun.
+deðiþken olarak private String model    alsýn.
+toString methodu kullanýn.
+
+
+araba isminde bir class olusturun. Kendine has bir deðiþkeni olmasýn.  bu class içerisinde, super classtaki modele ulaþýn.
+
+
+kamyon isminde bir class oluþturun. Kendine has bir deðiþkeni olmasýn. Bu class içerisinde, süper classtaki modele ulaþýn.
+
+
+Main classa gelin ve araba1 oluþturun. Modeli Toyota olsun.
+
+Araba2 oluþturun. Modeli Ford olsun.
+
+Kamyonet1 oluþurun. Modeli Dodge olsun.
+
+Kamyonet2 oluþturun. Modeli Ford olsun.
+
+Ve bunlarý yazdýrýn.
+
+Konsoldaki görüntü kabaca bu tarz olmalý :
+
+tasitlar  ve  model='Araba | Toyota'
+tasitlar  ve  model='Araba | Ford'
+tasitlar  ve  model='Kamyonet | Dodge'
+tasitlar  ve  model='Kamyonet | Ford'
+

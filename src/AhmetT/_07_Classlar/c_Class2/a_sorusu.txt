@@ -1,0 +1,10 @@
+
+/*
+        String...yetenek  : hic eleman gelmeyebilir
+        insanOlustur(String name, int age, String...yetenek)
+            insanOlustur("Ali", 20);   kabul
+
+        String[] yetenek  : en az 0 elemanli bir array olmali
+        insanOlustur(String name, int age, String[] yetenek)
+        insanOlustur("Ali", 20);  -->   hata olusturur
+     */

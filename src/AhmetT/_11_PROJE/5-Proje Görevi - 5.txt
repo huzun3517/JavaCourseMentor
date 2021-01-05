@@ -1,0 +1,16 @@
+Proje Görevi - 5
+
+Method - 24 public static void anaMenu(HashMap<Integer, HashMap<String, Integer>> dersNotlari, TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler)
+Açýklama: Ana Menu : 1-Ders Islemleri, 2-Ogrenci Islemleri, 3-Not Islemleri, 4-Raporlar, 0-Cikis menüsü olan method do loop ile belirtilen menu sayi degerlerine göre isleme baslayan method. do loop sarti olarak do{   }while(!menuGirisKontrol(okunanStr, "1234567".split("")); seklinde kullanilabilir. okunan sayi String olursa type hatasi da olmaz
+
+Method - 25 public static void menuDersIslem(TreeSet<String> dersler)
+Açýklama: Ders Islem Menusu : 1-Ders Ekleme, 2-Ders Düzeltme, 3-Ders Silme, 4-Ders Liste, 0-Ana Menu menüsü olan method, anaMenu gibi olacak
+
+Method - 26 public static void menuOgrenciIslem(TreeMap<Integer, String> ogrenciler)
+Açýklama: Ögrenci Islem Menüsü : 1-Ögrenci Ekleme, 2-Ögrenci Düzeltme, 3-Ögrenci Silme, 4-Ögrenci Liste, 0-Ana Menu menüsü olan method,  anaMenu gibi olacak
+
+Method - 27 public static void menuNotIslem(HashMap<Integer, HashMap<String, Integer>> dersNotlari, TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler)
+Açýklama: Not Islem Menusu : 1-Ders Notu Girisi, 2-Ders Not Düzeltme, 0-Ana Menu menüsü olan method, anaMenu gibi olacak
+
+Method - 28 public static void menuRaporIslem(HashMap<Integer, HashMap<String, Integer>> dersNotlari, TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler)
+Açýklama: 1- Bir Öðrenci Not Listesi, 2- Ders Ortalamalarý, 3- Öðrenci Ortalamalarý, 4- Öðrenci Baþarý Durumu, 5- Öðrencilerin Genel Not Dökümü, 0- Ana Menü menüsü olan method anaMenu gibi olacak

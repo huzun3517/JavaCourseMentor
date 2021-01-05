@@ -1,0 +1,13 @@
+/* 
+    Class1 package icinde, Main.java ve Insan.java olusturuldu.
+
+    Insan class islemleri:
+    String name; int age; statis int nufus; int numara; ekleyin
+
+    Methodlari:
+    Insan InsanOlustur(String name, int age):
+    bu methodda olusturulan her insan icin nufus ve numara yi artirin
+    
+    Main class islemleri:
+    5 adet insan olusturun her seferinde nufus ve numara'yi yazdirin
+*/

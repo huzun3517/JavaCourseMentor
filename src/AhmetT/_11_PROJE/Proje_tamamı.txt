@@ -1,0 +1,591 @@
+package OkulKayitIslemleri;
+
+import java.util.*;
+// Proje Görevi-1:
+//1. İlk önce projeKayitIslemleri adlı bir class oluşturun.
+//2. Aşağıdaki methodları oluşturup, mainden çağırarak doğru çalıştıklarını görünüz.
+public class OkulKayitIslemleri {
+    // METHOD 1 - gelen str degiskenini trim edip ilk harfini büyük diger harflerini kücük yapacak ve return edecek.
+    //Örnek: str: " meRhaBA   "  -->  return : "Merhaba"
+    public static String kelimeDuzenle(String str){
+        str = str.trim();
+        return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+    }
+
+    // METHOD 2 - gelen stryi .trim() edecek, .replaceAll("[ ]+", " "); ile kelimeler arasinda birden fazla bosluk varsa fazla boşlukları bir bosluga dönüstürecek,
+    // .split(" "); ile String[] arraye atacak, cümlenin son kelimesinin tüm harfleri büyük
+    //öncekileri kelimeDuzenle() methodu'nu kullanarak düzenleyip, önde ve sonda bosluk olmadan return edecek.
+    //Örnek: str : "  hasaN aLi     demir   "  -->  return : "Hasan Ali DEMIR"
+    public static String isimDuzenle(String str){
+        str= str.trim().replaceAll("[ ]+", " ");
+        String [] strArr = str.split(" ");
+        int i=0;
+        String newStr="";
+        for (String kel:strArr ) {
+            if (i++ < strArr.length-1) newStr+=kelimeDuzenle(kel)+" ";
+            else newStr+=kel.toUpperCase();
+        }
+        return newStr;
+    }
+
+    //Method-3 public static String isimDuzenleDers(String str)
+    //Açıklaması: Method -2 ile benzer sadece tüm kelimeler kelimeDuzenle() methodu'nu kullanarak düzenlenecek.
+    //Örnek: str : "     türK    diLi   "  -->  return : "Türk Dili"
+    public static String isimDuzenleDers(String str){
+        str= str.trim().replaceAll("[ ]+", " ");
+        String [] strArr = str.split(" ");
+        int i=0;
+        String newStr="";
+        for (String kel:strArr ) {
+            if (kel.equalsIgnoreCase("ve")) newStr+="ve ";
+            else newStr+=kelimeDuzenle(kel)+" ";
+        }
+        return newStr.trim();
+    }
+
+    //Method-4 : aldigi min ve max değerleri arasında random sayi üretip return edecek
+    //Örnek: numaraVer(10, 100);  -->  67
+    public static int numaraVer(int min, int max) {
+        return (int)(Math.random()*(max+1-min) + min); //max dahil ise +1
+    }
+
+    // Method-5  Scanner kullanarak kullanicidan bir kelime ya da cümle alacak.
+    //Örnek: nextLine(); kullanınız
+    public static String kullanicidanVeriAl(String ekranYazisi) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(ekranYazisi +" : ");
+        return sc.nextLine();
+    }
+
+    // Method-6 : gelen eklenecekDers degiskenini kullanarak main de oluşturulacak TreeSet'e ekleyen method
+    public static void dersEkle(TreeSet<String> dersler, String eklenecekDers){
+        if(dersler.add(eklenecekDers)) System.out.println(eklenecekDers + " dersi eklendi...");
+        else System.out.println(eklenecekDers + " dersi zaten kayitlidir...");
+    }
+
+    // Method 7- gelen TreeSet'deki tüm verileri ekrana yazdıran method
+    public static void listeDersler(TreeSet<String> dersler){
+        System.out.print("Butun dersler : ");
+        for (String ders: dersler) {
+            System.out.print(ders +"\t");
+        }
+        System.out.println();
+    }
+
+    // Method 8- bu method icinde dersEkle cagrilacak ve kullanicidan kullanicidanVeriAl() methodu ile
+    //ders adi alinacak isimDuzenle() ile düzenlenen isim dersEkle() methodu ile TreeSet e eklenecek
+    public static void dersEkleForm(TreeSet<String> dersler){
+        String yeniDers = kullanicidanVeriAl("Eklemek istediginiz dersi giriniz");
+        yeniDers = isimDuzenleDers(yeniDers);
+        dersEkle(dersler, yeniDers);
+        //dersEkle(dersler,isimDuzenleDers(kullanicidanVeriAl("Eklemek istediginiz dersi giriniz : ")));
+    }
+
+    // Method 9 - silinecekDers adindaki dersi gelen TreeSetden silen method
+    public static boolean dersSil(TreeSet<String> dersler, String silinecekDers){
+        silinecekDers = isimDuzenleDers(silinecekDers);
+        boolean sildiMi = dersler.remove(silinecekDers);
+        if (sildiMi) System.out.println(silinecekDers +" dersi silinmistir...");
+        else System.out.println(silinecekDers +" dersi zaten kayitli degildir...");
+        return sildiMi;
+    }
+
+    //Method 10 - TreeSet içerisinde bulacağı eskiDersAdi adli dersi yeniDersAdi adına çeviren method
+    public static boolean dersGuncelle(TreeSet<String> dersler, String eskiDersAdi, String yeniDersAdi){
+        if (dersler.remove(eskiDersAdi)) return dersler.add(yeniDersAdi);
+        else return false;
+    }
+
+    // Method 11 - aldigi stringin sayi olup olmadigini döndüren method yaziniz
+    //Örnek: "123a"  -->  false,     "1002"  --> True
+    public static boolean girdiSayiMi(String str){
+        str = str.replace(".", ""); // double sayilar icin
+        return str.chars().allMatch( Character::isDigit ); // integer lar icin
+        // str.replaceAll([0 9]," ");
+
+       /* try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }*/
+    }
+
+    //    Method-12 Kullanicidan guncellenecekDers ders adini ve yeni adnini alip
+//    dersGuncelle() methoduna göndererek guncelleyen method
+    public static void dersGuncelleForm(TreeSet<String> dersler){
+        listeDersler(dersler);
+        String eskiDers = kullanicidanVeriAl("Guncellemek istediginiz dersin adini giriniz");
+        eskiDers= isimDuzenleDers(eskiDers);
+        String yeniDers = isimDuzenleDers(kullanicidanVeriAl("Guncellemek istediginiz dersin yeni adini giriniz"));
+
+        if (dersGuncelle(dersler,eskiDers, yeniDers)) System.out.println(eskiDers +" dersi silinip, " +yeniDers+" dersi eklenmistir..." );
+        else System.out.println("Silmek istediginiz ders bulunamadi veya eklemek istediginiz ders zaten sistemde mevcut...");
+    }
+
+    //    Method-13 Kayit edilen derslerden arananKelime icerenlerin listesini ekrana yazdiran method
+    public static void listeDerslerArama(TreeSet<String> dersler){
+        String arananKelime=kullanicidanVeriAl("Aradiginiz dersi giriniz");
+        int c=0;
+        for (String ders:dersler) {
+            if(ders.toLowerCase().contains(arananKelime.toLowerCase()))
+            {System.out.println(ders);c++;}
+        } if(c==0) System.out.println("Aradiginiz ders bulunamadi...");
+    }
+
+    //    Method-14 Bu method ogrenciler TreeMap'ini alacak
+//    ve aranan kelime'nin numara olup olmadigini girdiSayimi() ile kotrol edip  eger sayi ise ögrenciyi numarasi ile,
+//    eger sayi degilse aranan kelime isim de varsa isme göre arama
+//    bos girilmis ise tüm listeyi yazdiriniz.   Bu islemler oveload methodlar ile yapilacaktir. Farkli degiskenli ayni isimli 3 method
+    public static void listeleOgrenciForm(TreeMap<Integer, String> ogrenciler) {
+
+        String arananKelime = kullanicidanVeriAl("Aradiginiz ogrencinin adini veya numarasini giriniz");
+
+        if (arananKelime.equalsIgnoreCase("") || arananKelime.equalsIgnoreCase(" "))
+            listeleOgrenci(ogrenciler);
+
+        else if (girdiSayiMi(arananKelime)){
+            int studentNumber = Integer.parseInt(arananKelime);
+            listeleOgrenci(ogrenciler,studentNumber);
+        }
+        else     listeleOgrenci(ogrenciler, arananKelime);
+    }
+
+    //    Method-15 Kayit edilen tüm ögrencilerin listesini ekrana yazdiran method
+    public static void listeleOgrenci(TreeMap<Integer, String> ogrenciler){
+        // ogrenciler.forEach((key, value) -> System.out.println(key + " : " + value)); //asgidaki for each yerine kullanilabilir...
+
+        System.out.printf( "%-7s%-20s\n","OgrNo","Adi ve Soyadi");
+        for (Map.Entry<Integer, String> entry : ogrenciler.entrySet())
+            System.out.printf("%-7s%-20s\n",entry.getKey(),entry.getValue());
+    }
+
+    // Method-16 (overload) Kayit edilen ögrencilerden adi soyadi icinde
+    // arananKelime icerenlerin listesini ekrana yazdiran method
+    public static void listeleOgrenci(TreeMap<Integer, String> ogrenciler, String arananKelime){
+        int c=0;
+        for (Map.Entry<Integer, String> entry : ogrenciler.entrySet())
+            if (entry.getValue().toLowerCase().contains(arananKelime.toLowerCase())) {
+                System.out.println(entry.getKey() + " : " + entry.getValue()); c++;
+            }
+        if (c==0) System.out.println("Aradiginiz isimde ogrenci kayitli degildir...");
+    }
+
+    // Method-17 (overload) Kayit edilen ögrencilerden numarasina göre arama yapan yapan
+    // ve ekrana yazdiran method
+    public static void listeleOgrenci(TreeMap<Integer, String> ogrenciler, int arananNo){
+        //ogrenciler.forEach((key,value)-> { if (key==studentNumber)System.out.println(key + " : " +value); });
+        if(ogrenciler.containsKey(arananNo)) System.out.println(arananNo + " : " + ogrenciler.get(arananNo));
+        else System.out.println("Aradiginiz numarali ogrenci kayitli degildir...");
+    }
+
+    //    Method-18 yeni kayıt olacak öğrenci için verilen aralıkta
+//    ancak önceden verilmemiş random sayı üreten method
+    public static int yeniOgrenciNosuAl(TreeMap<Integer, String> ogrenciler){
+        int newNo=0;
+        int min=10;
+        int max=100;
+        do {
+            newNo = numaraVer(min, max);
+        }while(ogrenciler.containsKey(newNo));
+        return newNo;
+    }
+
+    // Method-19 Kullanicidan yeni kaydı yapılacak öğrenci adı alınacak
+    // yeniOgrenciNosuAl() ile alınan numara ile öğrenci kaydı yapılacak
+    // ve kaydedilen öğrenci listeleOgrenci() ile ekrana yazdırılacak
+    public static void ogrenciEkle(TreeMap<Integer, String> ogrenciler){
+        String name = kullanicidanVeriAl("Ogrenci adi ve soyadi");
+        name = isimDuzenle(name);
+        ogrenciler.put(yeniOgrenciNosuAl(ogrenciler), name);
+        listeleOgrenci(ogrenciler);
+    }
+
+    //    Method-20 Kullanicidan adı guncellenecek ogrenci Nosunu alacak
+//    ve yeni ismini alip ogrenciGuncelle() methoduna göndererek guncelleyen method
+    public static void ogrenciGuncelleForm(TreeMap<Integer, String> ogrenciler){
+        listeleOgrenci(ogrenciler);
+        int newNo = Integer.parseInt(kullanicidanVeriAl("Guncellemek istediginiz ogrencinin numarasini giriniz"));
+        String newName = kullanicidanVeriAl("Guncellemek istediginiz ogrencinin yeni adini giriniz");
+        newName = isimDuzenle(newName);
+
+        if (ogrenciler.containsKey(newNo)) ogrenciGuncelle(ogrenciler,newNo,newName);
+        else System.out.println("Girdiginiz ogrenci numarasi kayitli degildir");
+    }
+
+    // Method-21 ogrenciNo su verilen ögrencinin ismini güncelleyen method method
+    public static void ogrenciGuncelle(TreeMap<Integer, String> ogrenciler, Integer ogrenciNo, String yeniOgrenciAdi){
+        for (Map.Entry<Integer,String> entry: ogrenciler.entrySet() ) {
+            if (entry.getKey()==ogrenciNo) {
+                ogrenciler.put(ogrenciNo, yeniOgrenciAdi);
+                System.out.println(ogrenciNo + " numarali ogrenci " +yeniOgrenciAdi +" olarak guncellendi.");
+            }
+        }listeleOgrenci(ogrenciler);
+    }
+
+    // Method-22  Kullanicidan silinecek öğrenci numarasını alıp silen method,
+    // numara  kullanicidanVeriAl() methodu cagrilarak alinmali
+    // ve sayı olup olmadığı girdiSayiMi() ile kontrol edilmeli
+    public static void ogrenciSilForm(TreeMap<Integer, String> ogrenciler){
+        String strNo = kullanicidanVeriAl("Silmek istedginiz ogrencinin numarasini giriniz");
+        if (girdiSayiMi(strNo)) {
+            int no = Integer.parseInt(strNo);
+            if (ogrenciler.containsKey(no)) {
+                System.out.println(no +" numarali ogrenci " +ogrenciler.get(no)+ " slinmistir.");
+                ogrenciler.remove(no);
+                System.out.println("");
+            }
+            else System.out.println("Aradiginiz numara sistemde kayitli degildir...");
+        }
+    }
+
+    // Method-23 gelen str ifadesinin menuSecimListesi arrayi icinde olup olmadigini kontrol eden
+    // ve sonucu boolean (true ya da false) döndüren method
+    public static boolean menuGirisKontrol(String str, String[] menuSecimListesi){
+        return Arrays.asList(menuSecimListesi).contains(str);
+    }
+
+    //    Method-24  Ana Menu : 1-Ders Islemleri, 2-Ogrenci Islemleri, 3-Not Islemleri, 4-Raporlar, 0-Cikis menüsü olan
+//    method do loop ile belirtilen menu sayi degerlerine göre isleme baslayan method.
+//    do loop sarti olarak do{   }while(!menuGirisKontrol(okunanStr, "1234567".split("")); seklinde kullanilabilir.
+//    okunan sayi String olursa type hatasi da olmaz
+    public static void anaMenu(HashMap<Integer, HashMap<String, Integer>> dersNotlari, TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler){
+        String okunanStr="";
+        do{
+            System.out.println("___ANA MENU___\n1-Ders Islemleri\n2-Ogrenci Islemleri\n3-Not Islemleri\n" +
+                    "4-Raporlar\n0-Cikis!!!");
+            okunanStr = kullanicidanVeriAl("Yapmak istediginiz islemin numarasini giriniz");
+            switch (okunanStr){
+                case "1" : menuDersIslem(dersler);break;
+                case "2" : menuOgrenciIslem(ogrenciler); break;
+                case "3" : menuNotIslem(dersNotlari,ogrenciler,dersler);break;
+                case "4" : menuRaporIslem(dersNotlari,ogrenciler,dersler);break;
+            }
+        }while(!okunanStr.equals("0"));
+        System.out.println();
+        System.out.println("Program Sonlandiriliyor.......");
+    }
+
+    // Method-25 Ders Islem Menusu : 1-Ders Ekleme, 2-Ders Düzeltme, 3-Ders Silme, 4-Ders Liste, 0-Ana Menu menüsü olan method
+    public static void menuDersIslem(TreeSet<String> dersler){
+        String okunanStr="";
+        do{
+            System.out.println("__DERS ISLEMLERI__\n1-Ders Ekleme\n2-Ders Düzeltme\n3-Ders Silme\n4-Ders Liste\n" +
+                    "0-Ana Menu");
+            okunanStr = kullanicidanVeriAl("Yapmak istediginiz islemin numarasini giriniz");
+
+            switch (okunanStr){
+                case "1" : dersEkleForm(dersler);break;
+                case "2" : dersGuncelleForm(dersler); break;
+                case "3" : dersSil(dersler,kullanicidanVeriAl("Silmek istediginiz dersi giriniz"));break;  // ??????????????????????????????????
+                case "4" : listeDersler(dersler);break;
+            }
+        }while(!okunanStr.equals("0"));
+    }
+
+    // Method-26 Ögrenci Islem Menüsü : 1-Ögrenci Ekleme, 2-Ögrenci Düzeltme, 3-Ögrenci Silme, 4-Ögrenci Liste, 0-Ana Menu
+    public static void menuOgrenciIslem(TreeMap<Integer, String> ogrenciler){
+        String okunanStr="";
+        do{
+            System.out.println("__OGRENCI ISLEMLERI__\n1-Ögrenci Ekleme\n2-Ögrenci Düzeltme\n3-Ögrenci Silme\n" +
+                    "4-Ögrenci Liste\n5-Ögrenci Arama\n0-Ana Menu");
+            okunanStr = kullanicidanVeriAl("Yapmak istediginiz islemin numarasini giriniz");
+
+            switch (okunanStr){
+                case "1" : ogrenciEkle(ogrenciler);break;
+                case "2" : ogrenciGuncelleForm(ogrenciler); break;
+                case "3" : ogrenciSilForm(ogrenciler);break;
+                case "4" : listeleOgrenci(ogrenciler);break;
+                case "5" : listeleOgrenciForm(ogrenciler);break;
+            }
+        }while(!okunanStr.equals("0"));
+    }
+
+    // Method-27 Not Islem Menusu : 1-Ders Notu Girisi, 2-Ders Not Düzeltme, 0-Ana Menu menüsü olan method
+    public static void menuNotIslem(HashMap<Integer, HashMap<String, Integer>> dersNotlari, TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler){
+        String okunanStr="";
+        do{
+            System.out.println("__NOT ISLEMLERI__\n1-Ders Notu Girisi\n2-Ders Not Düzeltme\n0-Ana Menu");
+            okunanStr = kullanicidanVeriAl("Yapmak istediginiz islemin numarasini giriniz");
+
+            switch (okunanStr){
+                case "1" : dersNotuGirisi(dersNotlari, ogrenciler, dersler);break;
+                case "2" : dersNotuGirisi(dersNotlari, ogrenciler, dersler);break;
+            }
+        }while(!okunanStr.equals("0"));
+    }
+
+    //Method-28 1- Bir Öğrenci Not Listesi, 2- Ders Ortalamaları, 3- Öğrenci Ortalamaları,
+    // 4- Öğrenci Başarı Durumu, 5- Öğrencilerin Genel Not Dökümü, 0- Ana Menü
+    public static void menuRaporIslem(HashMap<Integer, HashMap<String, Integer>> dersNotlari, TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler){
+        String okunanStr="";
+        do{
+            System.out.println("__RAPOR ISLEMLERI__\n1-Bir Öğrenci Not Listesi\n2-Ders Ortalamaları\n" +
+                    "3-Öğrenci Ortalamaları\n4-Öğrenci Başarı Durumu\n5-Öğrencilerin Genel Not Dökümü\n0-Ana Menu");
+            okunanStr = kullanicidanVeriAl("Yapmak istediginiz islemin numarasini giriniz");
+
+            switch (okunanStr){
+                case "1" : ogrenciDersNotlari(dersNotlari);break;
+                case "2" : dersOrtalamalari(dersNotlari); break;
+                case "3" : ogrenciNotOrtalamalari(dersNotlari);break;
+                case "4" : ogrenciBasariDurumu(dersNotlari);break;
+                case "5" : ogrencilerinNotDokumu(dersNotlari, ogrenciler, dersler);break;
+            }
+        }while(!okunanStr.equals("0"));
+    }
+
+    //Method-29 aldığı ogrenciNo ya ait ders notlarını yazdıran method.
+    // kullanicidanVeriAl() ile alınan verinin sayı olup olmadığı kontrol edilecek, sayı ise notlar listelenecek
+    public static void ogrenciDersNotlari(HashMap<Integer, HashMap<String, Integer>> dersNotlari){
+        String ogrNoStr ="";
+        Map<String,Integer> dersVeNotlar = new HashMap<>();
+        do {
+            ogrNoStr = kullanicidanVeriAl("Ogrencinin numarasini giriniz");
+        } while(!girdiSayiMi(ogrNoStr));
+        int ogrNo = Integer.parseInt(ogrNoStr);
+
+        if (dersNotlari.containsKey(ogrNo))
+            dersVeNotlar.putAll(dersNotlari.get(ogrNo));
+        else
+            System.out.println(ogrNo +" numarali ogrenci kayitli degildir.");
+
+        System.out.printf("%-15s%-6s\n","Dersler","Notlar");
+
+        for (Map.Entry<String,Integer> entry: dersVeNotlar.entrySet()) {
+            System.out.printf("%-15s%-6s\n", entry.getKey(), entry.getValue());
+        }
+    }
+
+    //Method-30 aldigi bir dersin ortalamasini return eden method
+    public static double dersOrtalamasi(HashMap<Integer, HashMap<String, Integer>> dersNotlari, String ders){
+        double total=0;
+        ders = isimDuzenleDers(ders);
+        int i=0;
+        HashMap<String, Integer> tempDersNot = new HashMap<>();
+
+        for (Map.Entry<Integer, HashMap<String, Integer>> entry : dersNotlari.entrySet()) {
+            tempDersNot.putAll(entry.getValue());
+            if (tempDersNot.get(ders)>0) {
+                        total += tempDersNot.get(ders);
+                        i++;
+                    }
+                }
+
+        return total/i;
+    }
+
+    //Method-31 tüm derslerin ortalamalarını her bir ders için dersOrtalamasi() methodunu çağırarak yapan method
+    public static void dersOrtalamalari(HashMap<Integer, HashMap<String, Integer>> dersNotlari){
+
+        HashMap<String,Integer> dersler = new HashMap<>();
+
+        for (Map.Entry<Integer,HashMap<String,Integer>> entry: dersNotlari.entrySet()) {
+            dersler.putAll(entry.getValue());break;
+        }
+
+        System.out.printf("%-15s%-8s\n","Dersler","Ortalama");
+        for (Map.Entry<String,Integer> entry: dersler.entrySet()) {
+            System.out.printf("%-15s%.2f\n",entry.getKey(),dersOrtalamasi(dersNotlari,entry.getKey()));
+        }
+    }
+
+    //Method-32 Ogrecinin ortalama notunu return eden method
+    public static double ogrenciNotOrtalamasi(HashMap<Integer, HashMap<String, Integer>> dersNotlari, int ogrenciNo){
+        double aveOgr =0;
+        double total=0;
+        //String ogrenciNoStr = kullanicidanVeriAl("Ogrenci numarasini giriniz");
+        //if(girdiSayiMi(ogrenciNoStr)) ogrenciNo = Integer.parseInt(ogrenciNoStr);
+
+        Map<String,Integer> dersNot = new HashMap<>();
+        if (dersNotlari.containsKey(ogrenciNo))
+            dersNot.putAll(dersNotlari.get(ogrenciNo));
+        else
+            System.out.println(ogrenciNo +" numarali ogrenci kayitli degildir.");
+
+        for (Map.Entry<String,Integer> entry: dersNot.entrySet()) {
+            total += entry.getValue();
+        }
+        return total/dersNot.size();
+    }
+
+    //Method-33 tüm derslerin ortalamalarını her bir ders için dersOrtalamasi() methodunu çağırarak yapan method
+    public static void ogrenciNotOrtalamalari(HashMap<Integer, HashMap<String, Integer>> dersNotlari){
+        System.out.printf("%-10s%-10s\n","OgrNo","Ortalamasi");
+        for (Map.Entry<Integer, HashMap<String, Integer>> entry : dersNotlari.entrySet()) {
+            System.out.printf("%-10s%.2f\n",entry.getKey(),ogrenciNotOrtalamasi(dersNotlari, entry.getKey()));
+        }
+    }
+
+    //Method-34 alınan öğrencinin zayıf ders sayısını return eden method
+    public static int ogrenciZayifSayisi(HashMap<Integer, HashMap<String, Integer>> dersNotlari, int ogrenciNo){
+        int counter=0;
+        Map<String,Integer> dersNot = new HashMap<>();
+
+        if (dersNotlari.containsKey(ogrenciNo))
+            dersNot.putAll(dersNotlari.get(ogrenciNo));
+        else
+            System.out.println(ogrenciNo +" numarali ogrenci kayitli degildir.");
+
+        for (Map.Entry<String,Integer> entry: dersNot.entrySet())
+            if(entry.getValue() < 50) counter++;
+
+        return counter;
+    }
+
+    //Method-35 Öğrencileri okulno zayıfSayısı NotOrtalaması şeklinde listeleyen method
+    public static void ogrenciBasariDurumu(HashMap<Integer, HashMap<String, Integer>> dersNotlari){
+        String format="%-10s%-15s%.2f\n";
+        System.out.printf("%-10s%-15s%-10s\n","okulno","zayıfSayısı","NotOrtalaması");
+        for (Map.Entry<Integer, HashMap<String, Integer>> entry : dersNotlari.entrySet()){
+            System.out.printf(format,entry.getKey() ,ogrenciZayifSayisi(dersNotlari, entry.getKey()),ogrenciNotOrtalamasi(dersNotlari, entry.getKey()));
+        }
+    }
+
+    //Method-36 Tüm Ogrecinin not dökümünü yazdiran method,
+    //print -->  SN Okul No   Adı Soyadı      Mat     Fiz     Kim     Cog     seklinde olmali
+    public static void ogrencilerinNotDokumu(HashMap<Integer, HashMap<String, Integer>> dersNotlari,
+                                             TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler){
+        int counter = 1;
+        int i=0;
+        double totalOrt=0;
+        Map<String,Integer> tempNotlar = new HashMap<>();
+        System.out.printf("%-5s%-10s%-15s%-6s%-6s%-6s%-6s%-6s%-6s%-6s\n","SN", "Okul No", "Adı Soyadı", "Mat","Fiz","Kim","Bio","Tar", "Cog","ORT");
+        for (Map.Entry<Integer, HashMap<String, Integer>> entry : dersNotlari.entrySet()) {
+            tempNotlar.clear(); // icini bosaltmazsak su an yazilacak ogrencinin eger bir ders notu yoksa, onceki ogrencinin notunu yaziyor.
+            tempNotlar.putAll(entry.getValue());  // her ogrenci numarasina gore ders ve notlari map e atar
+            System.out.printf("%-5s%-10s%-15s%-6s%-6s%-6s%-6s%-6s%-6s",counter++ , entry.getKey(), ogrenciler.get(entry.getKey()),
+                    tempNotlar.get("Matematik"),tempNotlar.get("Fizik"),tempNotlar.get("Kimya"),tempNotlar.get("Bioloji"),
+                    tempNotlar.get("Tarih"),tempNotlar.get("Cografya"));
+
+//            for (Map.Entry<String, Integer> not: tempNotlar.entrySet()) {
+//                System.out.printf("%-6s",not.getValue());
+//            }
+            System.out.printf("%.2f",ogrenciNotOrtalamasi(dersNotlari, entry.getKey()));
+            System.out.println();
+            totalOrt+=ogrenciNotOrtalamasi(dersNotlari, entry.getKey());
+            i++;
+        }
+//        System.out.printf("%25s%-5s%.2f%-1s%.2f%-1s%.2f%-1s%.2f%-1s%.2f%-1s%.2f%-1s%.2f\n","ORTALAMA"," ",dersOrtalamasi(dersNotlari, "Matematik")," ",
+//                dersOrtalamasi(dersNotlari, "Fizik")," ",dersOrtalamasi(dersNotlari, "Kimya")," ",dersOrtalamasi(dersNotlari, "Bioloji")," ",
+//                dersOrtalamasi(dersNotlari, "Tarih")," ",dersOrtalamasi(dersNotlari, "Cografya")," ",totalOrt/i);
+    }
+
+    //Method-37 Bu method alacağı öğrenci listesi ile gelen öğrencilere
+    // seçilen dersin notlarını öğrenci notu yoksa ekleyecek, varsa güncelleyecektir.
+    // Method içinde ders listeleDers() ile tüm dersleri listeleyin ki kullanıcı hangi dersi seçeceğini görsün.
+    public static void dersNotuGirisi(HashMap<Integer, HashMap<String, Integer>> dersNotlari,
+                                      TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler){
+        listeDersler(dersler);
+        listeleOgrenci(ogrenciler);
+        String ogrNoStr = kullanicidanVeriAl("Ogrenci numarasini giriniz");
+        int ogrNo = Integer.parseInt(ogrNoStr);
+
+        HashMap<String,Integer> dersVeNot = new HashMap<>(); // girilen dersi ve notu atamak icin MAP.
+        String butunDerslerMi = kullanicidanVeriAl("Bir ders notu girmek icin 1 e, butun dersleri girmek icin 2 yi giriniz");
+        if(butunDerslerMi.equals("2")) {
+            for (String ders: dersler) {
+                System.out.print(ders); //Matematik :
+                dersVeNot.put(ders,Integer.parseInt(kullanicidanVeriAl("")));
+            }
+            dersNotlari.put(ogrNo,dersVeNot);
+        }
+
+        else {
+            String dersSec = isimDuzenleDers(kullanicidanVeriAl("Notunu gireceginiz dersi seciniz"));
+            int yeniNot = Integer.parseInt(kullanicidanVeriAl("Not giriniz"));
+
+            dersVeNot.put(dersSec, yeniNot);
+
+            if (dersNotlari.containsKey(ogrNo)) dersNotlari.get(ogrNo).putAll(dersVeNot);
+            else dersNotlari.put(ogrNo, dersVeNot);
+            System.out.println(dersSec + " dersine " + yeniNot + " notu girilmistir.");
+        }
+    }
+
+    //Ahmet beyin gonderdigi metod37
+    public static void dersNotuGirisi2(HashMap<Integer, HashMap<String, Integer>> dersNotlari,
+                                       TreeMap<Integer, String> ogrenciler,
+                                       TreeSet<String> dersler) {
+        HashMap<Integer, HashMap<String, Integer>> tempDersNotlari = new HashMap<>();
+
+        listeDersler(dersler);
+        String dersAdi;
+        do {
+            String ekranYazisi = "Notları Girilecek Ders Adını Giriniz";
+            dersAdi = isimDuzenleDers(kullanicidanVeriAl(ekranYazisi));
+        } while(dersAdi.trim().length()<=0);
+        if ((dersNotlari.values().toArray()[0].toString().contains(dersAdi)) ||
+                dersler.contains(dersAdi)){
+            Scanner sc = new Scanner(System.in);
+            String numStr;
+            int ogrOkulNo;
+            String ogrAdi;
+            int ogrNotu = -1;
+            int eskiDersNotu = -1;
+
+            System.out.println(dersAdi + " Notlarini Giriniz :");
+            for (Map.Entry<Integer, String> ogrList : ogrenciler.entrySet()) {
+                do {
+                    ogrOkulNo = ogrList.getKey();
+                    ogrAdi = ogrList.getValue();
+                    eskiDersNotu = dersNotlari.get(ogrOkulNo).getOrDefault(dersAdi, -1);
+                    System.out.print(ogrOkulNo + "\t(" + eskiDersNotu + ")\t" + ogrAdi + " : ");
+                    numStr = sc.nextLine();
+                    ogrNotu = Integer.parseInt(numStr);
+                } while (!(girdiSayiMi(numStr) && (ogrNotu > 0 && ogrNotu <= 100)));
+
+                HashMap<String, Integer> tempDersNot = new HashMap<>();
+                tempDersNot.put(dersAdi, ogrNotu);
+                if (dersNotlari.containsKey(ogrOkulNo))
+                    dersNotlari.get(ogrOkulNo).putAll(tempDersNot);
+                else
+                    dersNotlari.put(ogrOkulNo, tempDersNot);
+            }
+        }else
+            System.out.println(dersAdi + " adli ders kayitlarimizda yoktur.");
+    }
+
+
+    // main işlemleri :
+    // main de dersler adlı String türü bir TreeSet oluşturunuz.
+    public static void main(String[] args) {
+        TreeSet<String> dersler = new TreeSet<>();
+        TreeMap<Integer,String> ogrenciler = new TreeMap<>();
+        HashMap<Integer, HashMap<String, Integer>> dersNotlari = new HashMap<>();
+        HashMap<String,Integer> derslerVeNotlar = new HashMap<>();
+
+        ogrenciler.put(11,"Ali YILMAZ");
+        ogrenciler.put(12,"Veli POYRAZ");
+        ogrenciler.put(13,"Ali KESER");
+
+        dersEkle(dersler, "Bioloji");
+        dersEkle(dersler, "Kimya");
+        dersEkle(dersler, "Matematik");
+        dersEkle(dersler, "Tarih");
+        dersEkle(dersler, "Fizik");
+
+
+        anaMenu(dersNotlari,ogrenciler,dersler);
+
+//        System.out.println("derslerTreeSet = " + dersler);
+//
+//        listeDersler(dersler); // set i ekrana yazdiran metod
+//
+//        dersEkleForm(dersler);
+//
+//        boolean dersSilindiMi = dersSil(dersler, "Bilgisayar");
+//
+//        dersGuncelleForm(dersler);
+//
+//        listeDersler(dersler);
+//
+//        listeDerslerArama(dersler);
+//
+//        listeleOgrenciForm(ogrenciler);
+//
+//        ogrenciEkle(ogrenciler);
+//
+//        listeleOgrenci(ogrenciler);
+
+    }
+}

@@ -1,0 +1,40 @@
+Ogrenci rapor karti
+
+Ismi Ogretmen ve Ogrenci olan iki ayri class olusturunuz, ve bu iki class'i adi Sinif olan baska bir class icinde cagiriniz
+Ogretmen classinin attribute'leri:
+    String isim;
+    int deneyim;
+    String bolum;
+
+    ogretmenimNasil adli bir method icinde deneyim yilina gore ogretmenin kalitesini olcun.
+
+Ogrenci attribute'leri
+    String isim;
+    String bolum;
+    int yas;
+    int ilkSinav;
+    int ikinciSinav;
+    int ucunceSinav;
+
+    ogrencinin not ortalamasini hesaplayacak bir method olusturunuz.
+
+Sinif attributes:
+
+    String konu;
+    Ogrenci ogrenci;
+    Ogretmen ogretmen;
+
+    ogrencinin olusturdugu raporu verecek bir toString methodu olusturunuz.
+    Rapor soyle gozukmeli:
+
+
+Subject of the class: Java
+
+Name: Furkat
+Age: 25
+Major: Computer Science
+Average grade: 90
+
+Name of the teacher: Dos
+Degree of Dos: Computer Science
+The teacher is : okay no joke this teacher is good. or generally they are...

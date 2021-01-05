@@ -1,0 +1,16 @@
+Proje Görevi - 4
+
+Method-19 public static void ogrenciEkle(TreeMap<Integer, String> ogrenciler)
+Açýklamas: Kullanicidan yeni kaydý yapýlacak öðrenci adý alýnacak yeniOgrenciNosuAl() ile alýnan numara ile öðrenci kaydý yapýlacak ve kaydedilen öðrenci listeleOgrenci() ile ekrana yazdýrýlacak
+
+Method-20 public static void ogrenciGuncelleForm(TreeMap<Integer, String> ogrenciler)
+Açýklama: Kullanicidan adý guncellenecek ogrenci Nosunu alacak ve yeni ismini alip ogrenciGuncelle() methoduna göndererek guncelleyen method
+
+Method-21 public static void ogrenciGuncelle(TreeMap<Integer, String> ogrenciler, Integer ogrenciNo, String yeniOgrenciAdi)
+Açýklama: ogrenciNo su verilen ögrencinin ismini güncelleyen method method
+
+Method-22 public static void ogrenciSilForm(TreeMap<Integer, String> ogrenciler)
+Açýklama: Kullanicidan silinecek öðrenci numarasýný alýp silen method, numara  kullanicidanVeriAl() methodu cagrilarak alinmali ve sayý olup olmadýðý girdiSayiMi() ile kontrol edilmeli
+
+Method-23 public static boolean menuGirisKontrol(String str, String[] menuSecimListesi)
+Açýklama: gelen str ifadesinin menuSecimListesi arrayi icinde olup olmadigini kontrol eden ve sonucu boolean (true ya da false) döndüren method

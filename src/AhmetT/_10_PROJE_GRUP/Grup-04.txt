@@ -1,0 +1,68 @@
+//---------------------------------------------------------------------------------------------------------------------------
+// aldigi min ve max arasinda random sayi üretip return eden method
+// Method - 4
+
+public static int numaraVer(int min, int max){
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// adı  reverseWord olan bir method oluşturun
+// Bu methodun String olarak bir parametresi olmalıdır
+// Ve bu cümledeki kelimelerle tersine çevirmeli
+// Ters halini yazdırın.
+// Örnek 1 :
+// Dize: Java yazın
+// dönüş şöyle olmalıdır:  yazın Java
+// Örnek 2:
+// Dize: Sakin olun ve evde kalın
+// dönüş olmalı: kalın evde ve olun sakin
+ 
+public static String reverseWord(String str){
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// powerOfThree isminde bir method oluşturun.
+// Parametre olarak int
+// Return tipi boolean
+// Bir tamsayı verildiğinde, 3 üssü olup olmadığını teyit edin. 3'ün üssü(kuvveti) ise true, değilse false döndürün.
+// Örnek 1:	Girdi: 27		Çıktı: true	Açıklama: 3*3*3 =27		Sonuç= true
+// Örnek 2:	Girdi: 0		Çıktı: false
+// Örnek 3:	Girdi: 9		Çıktı: true			Açıklama: 3*3 = 9		Sonuç= true
+// Örnek 4:	Girdi: 45		Çıktı:: false		Açıklama: 3*3*3*3 =81	Sonuç= false
+// 45, 3ün üssü (kuvveti) değildir.
+
+public static boolean powerOfThree(int n){
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// bir from2dTo1d method olusturun Parametre 2d Array, return 1d array olsun.
+// Bir tane 2d array [][]   oluşturun ve elemanları =  [  [ 1, 2, 3 ],  [ 4, 5, 6 ],  [ 7, 8, 9 ] ]
+// Tüm elemanları bir arrayListe yükleyin ve bu arrayList'i yazdırın.
+// Örnek:	Girdi:
+// Çıktı: [1,2,3,4,5,6,7,8,9]
+// islemleri main 
+ public static int[] from2dTo1d(int[][] arr){}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+//---------------------------------------------------------------------------------------------------------------------------
+public boolean only14(int[] nums) {
+
+	return true;
+}
+
+Given an array of ints, return true if every element is a 1 or a 4.
+only14([1, 4, 1, 4]) → true
+only14([1, 4, 2, 4]) → false
+only14([1, 1]) → true
+ */

@@ -1,0 +1,59 @@
+//---------------------------------------------------------------------------------------------------------------------------
+// gelen str degiskeninin trim edip ilk harfini büyük diger harflerini kücük yapan ve return eden method.
+// gelen: " meRhaBA   "  -->  return : "Merhaba"
+// Method - 1
+
+public static String kelimeDuzenle(String str){
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// Ismi randomNum olan bir method oluşturun.
+// Parametre olarak int max almalı.
+// Bu method, 0 ile max arasında random bir değer döndürmelidir.
+// Random numarayı döndürünüz.
+// Note: Eğer bir class oluşturmaya ihtiyaç duyuyorsanız oluşturabilirsiniz.
+// Note: Methodun adı istenilenle birebir aynı olmalı (randomNum), aksi taktirde cevap yanlış olur.
+
+public static int randomNum(int max){
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// isUnique adında bir method oluşturun.
+// Parametre olarak int array alır.
+// ve bu dizideki değerlerin benzersiz olup olmadığını gösteren bir boolean değeri döndürür (benzerlik yoksa true, var ise false).
+// örneğin, list isminde bir array'imiz varsa,
+// int[] list = {3, 8, 12, 2, 9, 17, 43, -8, 46, 203, 14, 97, 10, 4};
+// Bu listede yinelenen eleman olmadığı için sonuç true dönmelidir.
+// int[] list = {4, 7, 2, 3, 9, 12, -47, -19, 308, 3, 74};
+// Bu listede eleman 3, iki tane olduğu için sonuç false dönmelidir.
+
+public static boolean isUnique(int[] arr){
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// hillNum() isminde bir method oluşturun.
+// Parametre olarak Integer ArrayList
+// Return tipi int,
+//  Eğer sayı, önceki sayıdan küçük ve bir sonraki sayıdan büyük ise, o sayıyı yazdırın.
+// Örneğin;	ArrayList  5,4,6,2,1	2, 6'dan küçük ve 1 den büyüktür.	Return 2 olmalı.
+
+public static int hillNum(ArrayList<Integer> arrList){
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+public boolean scoresIncreasing(int[] scores) {
+
+	return false;
+}
+
+
+Given an array of scores, return true if each score is equal or greater than the one before. The array will be length 2 or more.
+scoresIncreasing([1, 3, 4]) → true
+scoresIncreasing([1, 3, 2]) → false
+scoresIncreasing([1, 1, 4]) → true

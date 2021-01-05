@@ -1,0 +1,25 @@
+
+todo       -----------  Girdiðimiz bir cümleyi tam ortasýndan ikiye ayýran bir program yazalým. -----------
+
+    textClass isminde bir yan class oluþturalým.
+    String text1 ve String text2 yi tanýmlayýp istenilen cümleleri karþýsýna yazalým.
+
+    textClass 'ýn içerisine public String ilkYarisi methodunu oluþturalým ve parametresi String text olmalý.
+    Burada yazýlan text'in ilk yarýsýný return etsin.
+
+    textClass'ýn içerisine public String ikinciYarisi diye bir method oluþturun ve parametresi String text olsun.
+    Burada yazýlan textin 2. yarýsýný return etsin. (genel bir method olmalý, her cümlede çalýþmalý.)
+
+
+    Ana classýmýzda (main methodunun  oldugu class) 'topla' isminde void bir method oluþturalým.
+    parametresi String a ve String b olsun.
+
+    Bu method, text1'in ilk kýsmýný, text2'nin ikinci kýsmýný alsýn.
+    ipucu(Daha önceden oluþturduðumuz methodlarý kullanýn....)
+
+    Text1 in ilk kýsmýný ve text2 nin ikinci kýsmýný birleþtirsin. (Yeni bir cümle yapsýn, 2 yarýyý da toplasýn.)
+
+    örn: text 1= javayý seviyorum
+            text2 = techno study
+            konsolda "sadece" þu yazmalý:
+            javayý setechno

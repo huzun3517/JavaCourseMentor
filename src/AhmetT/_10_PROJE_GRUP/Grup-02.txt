@@ -1,0 +1,72 @@
+//---------------------------------------------------------------------------------------------------------------------------
+// gelen stryi .trim() edecek, .replaceAll("[ ]+", " "); ile kelimeler arasinda birden fazla bosluk varsa
+// bir bosluga dönüstürecek, .split(" "); ile String[] arraye atacak, cümlenin son kelimesinin Tüm harfleri büyük
+// öncekileri kelimeDuzenler ile düzenleyip, önde ve sonda bosluk olmadan return edecek.
+// gelen : "  hasaN aLi     demir   "  -->  return : "Hasan Ali DEMIR"
+// Method - 2
+
+public static String isimDuzenle(String str){
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// Create one method which name is middleWord
+// "OrtaKelime" isminden bir method oluşturun.
+// Bu method String'i parametre olarak almalı.
+// Cümle veya dizelerde ortada bulunan kelimeleri bulmalı.
+// Ortadaki kelimeyi return yapınız.
+// Örnek: Ben Java'yı seviyorum.
+// print : Java'yı
+// Örnek2:
+// Java'yı kolayca öğreniyorum.
+// print: kolayca
+
+public static String middleWord(String str){
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// Write a method called append
+// append adında bir method oluşturun.
+// Parametre olarak iki int array  oluşturun.
+//  ve ikinci array'in değerlerini ilk array'in sonuna ekleme sonucunu içeren yeni bir array döndürün.
+//  Örneğin, ilk array {2, 4, 6}  ve ikinci array {1, 2, 3, 4, 5} elemanlarına sahip ise,
+// Bunu döndürmelidir:
+//  {2, 4, 6, 1, 2, 3, 4, 5}.
+
+public static int[] append(int[] arr1, int[] arr2){
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// common_values() isminde bir method oluşturun.
+// Parametre olarak 2 tane Integer ArrayList
+// Return tipi integer ArrayList olmalı
+//  İki arraylist alın ve arraylist'teki tüm ortak değerleri döndürün
+// Örneğin;
+// ArrayList 1:    3 , 2 , 5 , 6
+// ArrayList 2:     5 , 8 , 9
+// return  5 olmalı
+// Örneğin;
+// ArrayList 1: 8,7,9,6,7
+// ArrayList 2: 6,7,12,3,1
+// return 6 ve 7 olmalı
+
+public static ArrayList<Integer> common_values(ArrayList<Integer> arr1, ArrayList<Integer> arr2){
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+public List<String> noX(List<String> strings) {
+	return null;
+}
+
+Given a list of strings, return a list where each string has all its "x" removed.
+noX(["ax", "bb", "cx"]) → ["a", "bb", "c"]
+noX(["xxax", "xbxbx", "xxcx"]) → ["a", "bb", "c"]
+noX(["x"]) → [""]

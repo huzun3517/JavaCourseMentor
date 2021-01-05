@@ -1,0 +1,59 @@
+
+todo       -----------               Barýnaktan hayvan sahiplenme                  -----------
+
+
+todo AMAÇ: ----------------------------
+Barýnakta sadece kedi ve köpek vardýr.
+ilk olarak;
+
+Sistem bize "Barýnakta bulunan hayvanlar:
+Kedi
+köpek
+        Hangi hayvaný sahiplenmek istiyorsunuz?:
+
+                                  þeklinde bir çýktý versin.
+
+Kullanýcý kedi veya köpek girdiðinde, seçtiði hayvanýn bilgileri gelmeli ve sistem son bulmalý.
+
+Eðer baþka bir hayvan girerse "barýnakta böyle bir hayvan bulunmamaktadýr" uyarýsýný versin ve tekrar en baþa dönsün, yani hangi hayvaný sahiplenmek istersiniz? sorusuna dönsün.
+Ta ki kedi veya köpek girene kadar...
+        todo ----------------------------------------
+
+hayvanlar isminde yan bir class oluþturun.
+içerisinde
+     String hayvan;
+     int yasi;
+     String renk;
+
+     olsun.
+
+     bu classýn içine tercihler isminde void bir method oluþturun.
+
+
+     todo---Kedi
+     kullanýcý büyük-küçük harf gözetmeksizin   "kedi" yazarsa;
+     yaþ=4'e , renk ise beyaza eþit olsun.
+
+ ve alt alta:
+ hangi hayvan: kedi
+ yaþ : 4
+ renk : beyaz            çýktýsý gelsin.
+
+        todo--Köpek
+    kullanýcý büyük-küçük harf gözetmeksizin   "köpek" yazarsa;
+     yaþ=3'e , renk ise siyaha eþit olsun.
+
+
+ ve alt alta:
+ hangi hayvan: köpek
+ yaþ : 3
+ renk : siyah            çýktýsý gelsin.
+
+ todo Baþka bir deðer girilirse(örn: hamster)
+
+Sistem bize
+Barýnaðýmýzda böyle bir hayvan bulunmamaktadýr..
+mesajýný verdikten sonra tekrar en baþa yani:
+Hangi hayvaný sahiplenmek istiyorsunuz? sorusuna gelip devam etsin.
+
+

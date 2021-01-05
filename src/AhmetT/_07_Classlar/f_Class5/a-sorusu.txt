@@ -1,0 +1,26 @@
+/*
+    Class5 package icinde, Main.java, Insan.java ve Muhabbet.java olusturuldu.
+
+    Insan class islemleri:
+        String name;  ekleyin
+
+        Methodlari:
+              Insan insanOlustur(String name, int age):
+                bu methodda olusturulan her insan icin nufus ve numara yi artirin
+
+
+
+    MuhabbetKonulari class islemleri;
+
+        Map<String, ArrayList<String>> sorular; ekleyin
+        Map<String, ArrayList<String>> cevaplar; ekleyin
+        yapisi Map<{Konu}, <{Sorular ya da Cevaplar}>> olmali
+
+
+        Methodlari
+            MuhabbetKonulari muhabbetKonusuAl()
+
+
+    Main class islemleri:
+        5 adet insan olusturun her seferinde nusus ve numara'yi yazdirin
+*/

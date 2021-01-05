@@ -1,0 +1,22 @@
+todo       -----------       Ýki random sayý ile 4 iþlem                   -----------
+
+islemClass isminde bir class oluþturun.
+
+bu classta 4 iþlem için 4 ayrý method oluþturun.örn: public int topla(int a, int b)- çýkarma - çarpma - bölme
+
+return olarak o iþlemi versin. örn: return a-b;
+    ---------------------------------------------------
+main classýmýzda iki int oluþturun ve bu iki int 0'dan 15 e kadar random sayýlar alsýn.
+
+Bu iki int i    4iþlem methodlarýnda kullanýn.
+
+
+
+konsol þöyle olmalý:            (Sayýlar her run yapýldýðýnda deðiþmeli, random atanmalý)
+Sayý 1 =  9
+Sayý 2 =  4
+------------Ýþlemler ----------
+Toplama:  13
+Çýkarma:   5
+Çarpma:    36
+Bölme:    2.25

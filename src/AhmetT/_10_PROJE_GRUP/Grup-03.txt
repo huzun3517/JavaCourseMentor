@@ -1,0 +1,77 @@
+//---------------------------------------------------------------------------------------------------------------------------
+// gelen stryi .trim() edecek, .replaceAll("[ ]+", " "); ile kelimeler arasinda birden fazla bosluk varsa
+// bir bosluga dönüstürecek, .split(" "); ile String[] arraye atacak, cümlenin son kelimesinin Tüm harfleri büyük
+// öncekileri kelimeDuzenler ile düzenleyip, önde ve sonda bosluk olmadan return edecek.
+// gelen : "  türk    dili   "  -->  return : "Türk Dili"
+// Method - 3
+public static String isimDuzenleDers(String str){
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// reverseString isminde bir method oluşturun.
+// Bu method bir String'i parametre olarak alsın.
+// Ve bu method, girilen String'i tersten yazsın.
+// Terste yazılmış halini yazdırınız.
+// Örn: String = "Java'yı Seviyorum."
+// Print: .muroyiveS ıy'avaJ
+
+public static String reverseString(String str){
+ 
+ 
+ 
+ 
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// minCostClimbingStairs  isminde bir method oluşturun.
+// Parametresi    int array'dir.
+// Return tipi  int olmalıdır.
+// Bir merdivende, i'inci adımda bazı negatif olmayan maliyet, cost[i] atanır (0 indeksli). 
+// Maliyeti ödediğinizde, bir veya iki adım tırmanabilirsiniz. Zeminin tepesine ulaşmak için minimum maliyeti bulmanız gerekir 
+// ve dizin 0 ile adımdan veya dizin 1 ile adımdan başlayabilirsiniz.
+// Örnek 1:
+// Girdi: cost = [10, 15, 20]
+// Çıktı: 15
+// Açıklama:  En ucuz  cost [1] 'de başlar, bu maliyeti öde ve en üste git.
+// Örnek  2:
+// Girdi: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
+// Çıktı: 6
+// Açıklama:  En ucuz  cost[0] 'da başlar ve 1 numaralı adımda  cost[3]' ü atlar.
+
+public static int minCostClimbingStairs(int[] cost){
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// secondMax()  isminde bir method oluşturun.
+// Parametre olarak integer ArrayList.
+// Return tipi int olmalı.
+// ArrayList'teki en yüksek (maximum) 2. değeri bulun ve onu döndürün
+// ÖRN;	ArrayList   --  5,3,4,6,7	CEVAP : 6
+// Arrays.sort()  kullanmayiniz
+
+public static int secondMax(ArrayList<Integer> arr){
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+public String[] fizzBuzz(int start, int end) {
+
+	return null;
+}
+
+This is slightly more difficult version of the famous FizzBuzz problem which is sometimes given as a first problem for job interviews.
+(See also: FizzBuzz Code.) Consider the series of numbers beginning at start and running up to but not including end,
+so for example start=1 and end=5 gives the series 1, 2, 3, 4. Return a new String[] array containing
+the string form of these numbers, except for multiples of 3, use "Fizz" instead of the number, for multiples of 5 use
+"Buzz", and for multiples of both 3 and 5 use "FizzBuzz". In Java, String.valueOf(xxx) will make the String form of an int
+or other type. This version is a little more complicated than the usual version since you have to allocate and
+index into an array instead of just printing, and we vary the start/end instead of just always doing 1..100.
+
+fizzBuzz(1, 6) → ["1", "2", "Fizz", "4", "Buzz"]
+fizzBuzz(1, 8) → ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7"]
+fizzBuzz(1, 11) → ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz"]

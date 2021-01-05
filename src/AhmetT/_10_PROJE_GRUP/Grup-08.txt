@@ -1,0 +1,73 @@
+//---------------------------------------------------------------------------------------------------------------------------
+// guncellenecekDers adindaki dersi silen program. Silinecek ders ismi
+// Method - 10
+
+public static boolean dersGuncelle(TreeSet<String> dersler, String eskiDersAdi, String yeniDersAdi) {
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// nextGreaterElement isminde bir method oluşturun.
+// Parametre olarak iki int array'i kabul eder.
+// Size int nums1 adında bir int array verilir ve bunun altkümesi olarak da nums2 array verilir.
+// nums2 array'indeki nums1 ögelerini arayın ve ortak olan ögeden sonra gelen numaranın, nums2 array'inde 
+// bulunan sayıdan büyük olup olmadığını kontrol edin. Eğer öyle ise, bu sayının yerini nums2 deki 
+// büyük sayı ile değiştirin.nums2 array'inde, bulunan sayıdan sonra gelen başka bir sayı yoksa, o yer için -1 koyun.
+// Örnek ile daha iyi anlayacaksınız.
+// Example 1:
+// Girdi: nums1 = [4,1,2], nums2 = [1,3,4,2]
+// Çıktı:[-1,3,-1]
+// Açıklama:
+// İlk dizedeki 4 sayısı için, ikinci dizede (array'deki) bir sonraki büyük sayı yoktur, bu nedenle -1 yazılır.
+// İlk dizedeki 1 sayısı için, ikinci dizede 1'den sonra gelen büyük sayı 3 tür.
+// İlk dizedeki 2 sayısı için, ikinci dizede 2'den sonra gelen büyük bir sayı yoktur, bu nedenle -1 yazılır.
+// Cevap:[-1,3,-1]
+
+public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// ismi getCount() olan bir method oluşturun.
+// Parametre olarak bir String ArayList  ve  bir tane String
+// Return tipi int olmalı.
+// ArrayList'teki bir değerin kaç kez tekrarlandığını belirtin ve döndürün.
+// Örneğin;
+// ArrayList = Orange , Kiwi , Peach , Banana , Orange
+// String Orange:
+// Count = 2 olmalı. (Orange 2 kez yazılmış)
+
+public static int  getCount(ArrayList<String> arrLst, String str){
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// İsmi changelnArraylist() olan bir method oluşturun.
+// Parametre olarak String ArrayList, String s1, String s2
+//    Arraylist'te s1'i s2 olarak değiştirin
+// Return String arrayList
+//  Örneğin;	Arraylist  "yellow" , "red" , "blue" , "red" , "blue"
+// s1 = blue
+// s2 = yellow
+// Tüm blue 'ları yellow'a dönüştürün.
+// cevap: "yellow" , "red" , "yellow" , "red" , "yellow"
+
+public static ArrayList<String> changelnArraylist(ArrayList<String> arrList, String s1, String s2){
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+public boolean canBalance(int[] nums) {
+
+	return true;
+}
+
+Given a non-empty array, return true if there is a place to split the array so that the sum of
+the numbers on one side is equal to the sum of the numbers on the other side.
+
+canBalance([1, 1, 1, 2, 1]) → true
+canBalance([2, 1, 1, 2, 1]) → false
+canBalance([10, 10]) → true
+

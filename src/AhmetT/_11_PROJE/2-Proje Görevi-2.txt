@@ -1,0 +1,16 @@
+Proje Görevi-2:
+
+Method-8 public static void dersEkleForm(TreeSet<String> dersler)
+Açýklamasý: bu method icinde dersEkle cagrilacak ve kullanicidan kullanicidanVeriAl() methodu ile 
+ders adi alinacak isimDuzenleDers() ile düzenlenen isim dersEkle() methodu ile TreeSet e eklenecek 
+
+Method-9 public static boolean dersSil(TreeSet<String> dersler, String silinecekDers) 
+Açýklamasý: silinecekDers adindaki dersi gelen TreeSetden silen method
+Örnek: 
+
+Method-10 public static boolean dersGuncelle(TreeSet<String> dersler, String eskiDersAdi, String yeniDersAdi) 
+Açýklamasý: TreeSet içerisinde bulacaðý eskiDersAdi adli dersi yeniDersAdi adýna çeviren method
+
+Method-11 public static boolean girdiSayiMi(String str) 
+Açýklamasý: aldigi stringin sayi olup olmadigini döndüren method yaziniz 
+Örnek: "123a"  -->  false,     "1002"  --> True

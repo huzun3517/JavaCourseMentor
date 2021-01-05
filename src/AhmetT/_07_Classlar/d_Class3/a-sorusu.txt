@@ -1,0 +1,30 @@
+/*
+    Class3 package icinde, Main.java ve Insan.java olusturuldu.
+
+    Insan class islemleri:
+        String name; int age; HashSet<Insan> arkadaslar; Insan dostum; ekleyin
+        Methodlari:
+              Insan insanOlustur(String name, int age):
+                 bu methodda varArgs olarak varsa arkadaslar da HashSet e eklenebilsin
+
+              Asagidaki methodlarin parametrelerini ayarlayiniz
+              void arkadasEkle();       olusturulan insana arkadas eklesin
+              void arkadasSil();        olusturulan insandan arkadas silsin
+              void arkadaslarinKimler(); ilgili insanin arkadaslari listelesin
+              boolean arkadasinMi();    gönderilecek insan ilgili insanin arkadasi mi?
+              int kacArkadasinVar();    ilgili insanin arkadas sayisini sayisini return etsin
+              void dostAta();           dost arkadaslar icinde olmali
+              boolean dostunVarMi()     dostu var mi yok mu döndürülsün
+              Insan dostunKim()         ilgili insanin dostunu return etsin
+
+    Main class islemleri:
+         insanlar olusturun,
+         bazilarina arkadas atayin
+         bazilarina dost atayin
+         arkadaslarini ve sayisini sorun
+         birisinin digerinin arkadasi olup olmadigini sorun
+         dostun varmi diye sorun
+         dostunu sorun
+
+
+*/

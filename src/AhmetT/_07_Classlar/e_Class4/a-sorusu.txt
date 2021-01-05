@@ -1,0 +1,39 @@
+Class4 package icinde, Main.java, Insan.java ve Cocuklar.java olusturuldu.
+
+    Insan class islemleri:
+        String name;
+        int age;
+        char cinsiyet;
+        boolean evli;
+        HashSet<Insan>cocuklar;
+        HashSet<Insan>kardesler;
+        Insan es;
+        Insan anne;
+        Insan baba;
+
+
+        Methodlari:
+             Constructor olusturun
+
+             public String toString();
+
+              Asagidaki methodlarin parametrelerini ayarlayiniz
+
+               void anneBabaEkle()       anne  ve baba eklesin
+                                         ayni zamanda bu sahsi kayili degilse
+                                         anne ve babaya cocuk olarak eklesin
+
+               void kardesEkle()         gelen insanlari kardes olarak atasin, ayrica
+                                         bu insani gelenlere kardes olarak atasin
+
+               void evlen();             bir insanin evlenme sartlarini kontrol ederek
+                                         evlilik islemini sonuclandirsin ve
+                                         evlendigi kisinin esi olarak bu sahsi atasin
+
+               void cocukEkle();         evli ise cocuklari eklesin
+
+               void cocuklarinKimler();  evli ise cocuklari listelesin
+
+               boolean cocukVarMi();     ilgili insanin cocugu var mi?
+                                         varsa "1 cogugum var" ya da "cocugum yok"
+                                         ya da "evli degilim" desin

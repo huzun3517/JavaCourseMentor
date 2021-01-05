@@ -1,0 +1,66 @@
+//---------------------------------------------------------------------------------------------------------------------------
+// silinecekDers adindaki dersi silen program. Silinecek ders ismi
+// Method - 9
+
+public static boolean dersSil(TreeSet<String> dersler, String silinecekDers) {
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// plusOne adında bir method oluşturun.
+// Parametre olarak int alır.
+// Rakamlar pozitif olmalıdır ve ilk basamak 0 olamaz.
+// Yazdığınız rakamlar bir bütün olarak ele alınacaktır.
+// Orta basamağa 1 ekleyin.
+// Örnek 1:	Girdi:: [1,2,3]			Çıktı: [1,3,3]		Açıklama:Bu sayı dizisi 133'ü temsil eder.
+// Örnek 2:	Input: [4,3,5,2,1]		Çıktı: [4,3,6,2,1]	Açıklama: Bu sayı dizisi 43621'i temsil eder.
+
+public static int[] plusOne(int[] nums){
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// findTheDifference isminde bir method oluşturun.
+// iki String'den oluşmalı.
+// return  veri tipi char olmalı.
+// Bu iki string'e  s  ve t  ismini veriniz ve küçük harflerden oluşan değerler giriniz.
+//  String t, rastgele karıştırma dizgileri String s tarafından oluşturulur ve daha sonra rastgele bir konuma bir harf daha ekler.
+//  String t ye  eklenen harfi bulun. (String s 'te olup, String t 'de olmayan elemanı yazdırın.)
+// Örn:	Girdi: s = "abcde"	t = "abcd"		Çıktı:e		Açıklama:	'e' harfi eklenmiştir.
+// 		Girdi:	s = "qawer"	t = "rewq"		Çıktı:a		Açıklama:'a' harfi eklenmiştir.
+
+public static char findTheDifference(String s, String t){
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// negatif olmayan bir n sayısı girin ve bu sayıya kadar olan kaç asal sayı var ise yazdırın.
+// Örnek 1:	n = 20	cevap: 8      ==   (2,3,5,7,11,13,17,19)  20 ye kadar 8 adet asal sayı vardır.
+// Örnek2:		Input(Girdi): 10		Output(Çıktı): 4
+// Açıklama: 10'dan küçük 4 adet asal sayı vardır. (2,3,5,7)
+// 2 adet method olusturun 
+//	asalMi(), Parametresi long n, return boolean : gelen sayinin asal olup olmadigini bulsun 
+//  asalSayiSayisi(), Parametresi  int n, return int : gelen sayiya kadar olan asal sayilari asalMi yardimi ile siralasin
+public static boolean asalMi(long n){
+public static int asalSayiSayisi(int n){
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+public int[] zeroMax(int[] nums) {
+
+	return null;
+}
+
+Return a version of the given array where each zero value in the array is replaced by
+the largest odd value to the right of the zero in the array.
+If there is no odd value to the right of the zero, leave the zero as a zero.
+
+zeroMax([0, 5, 0, 3]) → [5, 5, 3, 3]
+zeroMax([0, 4, 0, 3]) → [3, 4, 3, 3]
+zeroMax([0, 1, 0]) → [1, 1, 0]
+

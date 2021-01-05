@@ -1,0 +1,16 @@
+Proje Görevi - 6
+
+Method - 29 public static void ogrenciDersNotlari(HashMap<Integer, HashMap<String, Integer>> dersNotlari)
+Açýklama: aldýðý ogrenciNo ya ait ders notlarýný yazdýran method. kullanicidanVeriAl() ile alýnan verinin sayý olup olmadýðý kontrol edilecek, sayý ise notlar listelenecek
+
+Method - 30 public static double dersOrtalamasi(HashMap<Integer, HashMap<String, Integer>> dersNotlari, String ders)
+Açýklama: aldigi bir dersin ortalamasini return eden method
+
+Method - 31 public static void dersOrtalamalari(HashMap<Integer, HashMap<String, Integer>> dersNotlari)
+Açýklama: tüm derslerin ortalamalarýný her bir ders için dersOrtalamasi() methodunu çaðýrarak yapan method
+
+Method - 32 public static double ogrenciNotOrtalamasi(HashMap<Integer, HashMap<String, Integer>> dersNotlari, int ogrenciNo)
+Açýklama: Ogrecinin ortalama notunu return eden method
+
+Method - 33 public static void ogrenciNotOrtalamalari(HashMap<Integer, HashMap<String, Integer>> dersNotlari)
+Açýklama: tüm derslerin ortalamalarýný her bir ders için dersOrtalamasi() methodunu çaðýrarak yapan method

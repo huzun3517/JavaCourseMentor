@@ -1,0 +1,71 @@
+// ali.baba.baba.kardes(1).cocuklarinKimler();
+ali'nin dedesinin ilk kardesinin cocuklari'ni listeler
+
+// ali.kardes(1).es.baba.name;
+// ali'nin ilk kardesinin esinin babasinin ismi
+
+public class Insan {
+    String name;
+    int age;
+    char cinsiyet;
+    boolean evli = false;
+    LinkedHashSet<Insan> cocuklar;
+    Insan es;
+    Insan anne;
+    Insan baba;
+
+
+    public Insan(String name, int age, char cinsiyet){
+        this.name = name;
+        this.age = age;
+        this.cinsiyet = cinsiyet;
+        this.cocuklar = new LinkedHashSet<>();
+    }
+
+    // anne baba ekleyen method.
+    // ayni zamanda this i anne ve babaya bu cocuk olarak eklemeli
+    void anneBabaEkle(Insan anne, Insan baba){
+    }
+
+    public String toString(){
+        return this.name;
+    }
+
+    // evlenme sartlarina bakarak iki insani evlendiren method
+    void evlen(Insan es){
+    }
+
+    // cocuk ekleyen method
+    void cocukEkle(Insan...cocuk){
+    }
+
+
+    // cocuklari listeleyen method. Yoksa methodu ona göre düzenleyiniz
+    void cocuklarinKimler(){
+    }
+
+    // amca(1)  ilk amcayi döndürür. Yoksa methodu ona göre düzenleyiniz
+    Insan amca(int sira){
+    }
+
+    // hala(1)  ilk halayi döndürür. Yoksa methodu ona göre düzenleyiniz
+    Insan hala(int sira){
+    }
+
+
+    // dayi(1)  ilk dayiyi döndürür. Yoksa methodu ona göre düzenleyiniz
+    Insan dayi(int sira){
+    }
+
+    // teyze(2)  ikinci teyzeyi döndürür. Yoksa methodu ona göre düzenleyiniz
+    Insan teyze(int sira){
+    }
+
+    // cocuk(1)  ilk cocugu döndürür. Yoksa methodu ona göre düzenleyiniz
+    Insan cocuk(int sira){
+    }
+
+    // kardes(1)  ilk kardesi döndürür. Yoksa methodu ona göre düzenleyiniz
+    Insan kardes(int sira){
+    }
+}

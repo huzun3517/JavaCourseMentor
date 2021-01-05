@@ -1,0 +1,62 @@
+
+todo  enum 1.
+"bakiye" isminde ayrý bir class oluþturun.
+Elemanýn ismi Musteri1 olsun ve parametresi 10 olsun.
+---> Musteri1(bakiyem:10); (bakiyem double cinsinden olmalý.) bakiyem 10 euro
+
+todo  enum  2.
+Ayrý bi enum class açýn ve ismi Tatlilar olsun ve parametresi tatliFiyati olsun.
+Elemanlarý  CÝLEKLÝPASTA ve fiyatý 4 ,
+MOZAÝKPASTA ve fiyatý 3.5,
+MUZLUPASTA ve fiyatý 4.5 olsun.
+
+todo enum 3.
+Ayrý bir classta icecekler isminde enum class açýn ve parametresi fiyat olsun.
+
+TURKKAHVESÝ     3
+ESPRESSO        4.5
+GAZOZ           2.25
+LÝMONATA        2
+                euro olsun.
+
+todo ÝPUCU !!! Fiyat bilgilerimize main class ýmýzdan direkt eriþilmesini ve deðiþtirilmesini istemiyoruz.
+Fiyatlara eriþebilmek için methodlarý kullanýn.
+
+todo Main methodun içi:
+
+müsteriyi cagýrýn.
+
+içecek olarak gazoz alsýn.
+
+tatlý olarak cilekli pasta alsýn.
+
+
+todo kosul:
+
+Eðer toplam tutar bakiyemden büyük ise,
+
+bakiyeniz yetersiz... Toplam tutar = 10.50
+Bakiyeniz : 10 yazsýn. (toplam tutar örnek amaçlý yazýldý)
+
+diðer durumlarda ise
+müþteri adým,
+sipariþlerim,
+toplam tutar
+para üstü
+Yeni bakiyem
+alt alta  yazsýn.
+
+todo KONSOL ÖRNEÐÝ ( Eðer toplam tutar bakiyeden büyük ise)
+
+Musteri1  Bakiyeniz yetersiz.. ---  Toplam tutar:   10.25
+Bakiyeniz : 10
+
+ todo    Diðer durumlarda:
+Müþteri no:  Musteri1
+Sipariþleri :  GAZOZ -CÝLEKLÝPASTA
+ToplamTutar= 6.25
+Paraüstü = 3.75
+Yeni bakiyem = 3.75
+
+todo NOT:
+2 durumu da görebilmek için sonradan ekstra bir tatlý daha ekleyin ve onun fiyatýný toplam tutara ekleyin.

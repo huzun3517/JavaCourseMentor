@@ -1,0 +1,17 @@
+Proje Görevi - 7
+
+Method - 34 public static int ogrenciZayifSayisi(HashMap<Integer, HashMap<String, Integer>> dersNotlari, int ogrenciNo)
+Açýklama: alýnan öðrencinin yayýf ders sayýsýný return eden method
+
+
+Method - 35 public static void ogrenciBasariDurumu(HashMap<Integer, HashMap<String, Integer>> dersNotlari)
+Açýklama: Öðrencileri okulno zayýfSayýsý NotOrtalamasý þeklinde listeleyen method
+
+
+Method - 36 public static void ogrencilerinNotDokumu(HashMap<Integer, HashMap<String, Integer>> dersNotlari, TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler)
+Açýklama: Tüm Ogrecinin not dökümünü yazdiran eden method, 
+print -->  SN Okul No   Adý Soyadý      Mat     Fiz     Kim     Cog     seklinde olmali
+
+
+Method - 37 public static void dersNotuGirisi(HashMap<Integer, HashMap<String, Integer>> dersNotlari, TreeMap<Integer, String> ogrenciler, TreeSet<String> dersler)
+Açýklama: Bu method alacaðý öðrenci listesi ile gelen öðrencilere seçilen dersin notlarýný öðrenci notu yoksa ekleyecek, varsa güncelleyecektir. Method içinde ders listeleDers() ile tüm dersleri listeleyin ki kullanýcý hangi dersi seçeceðini görsün.
